@@ -1,0 +1,50 @@
+# ===============
+# PYTHON & IA
+# ===============
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+.env
+.venv/
+
+# Modèles IA et Datasets
+*.pt
+*.h5
+*.weights
+dataset_parking/
+runs/
+labels.cache
+
+# Vidéos et médias lourds
+*.mp4
+*.avi
+*.mkv
+*.mov
+
+# ===============
+# REACT FRONTEND
+# ===============
+node_modules/
+dist/
+build/
+.npm/
+
+# ===============
+# JAVA BACKEND
+# ===============
+target/
+*.jar
+*.war
+.gradle/
+/build/
+
+# ===============
+# IDEs et OS
+# ===============
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db

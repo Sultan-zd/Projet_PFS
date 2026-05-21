@@ -1,0 +1,25 @@
+# ============================================================
+#  Smart Parking Analysis — Python AI Module Dependencies v3.0
+# ============================================================
+#  Installation : pip install -r requirements.txt
+# ============================================================
+
+# --- Core AI / Computer Vision ---
+ultralytics>=8.0.0          # YOLOv8 — Object detection framework
+opencv-python>=4.8.0        # OpenCV — Image/video processing (CLAHE, IoU)
+numpy>=1.24.0               # NumPy — Numerical computing
+torch>=2.0.0                # PyTorch — Deep learning backend
+
+# --- FastAPI Microservice ---
+fastapi>=0.110.0            # FastAPI — High-performance REST API
+uvicorn[standard]>=0.29.0   # Uvicorn — ASGI server
+python-multipart>=0.0.9     # Multipart — File upload support
+
+# --- HTTP / Communication ---
+requests>=2.31.0            # Requests — HTTP client (-> Spring Boot)
+
+# --- Utilities ---
+Pillow>=10.0.0              # PIL — Image manipulation
+
+# --- Dataset Preparation (optionnel) ---
+# roboflow>=1.1.0           # Roboflow — Dataset download (décommenter si besoin)

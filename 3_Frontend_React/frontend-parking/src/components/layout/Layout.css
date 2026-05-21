@@ -1,0 +1,61 @@
+/* ══════════════════════════════════════════
+   Layout — App Shell
+   ══════════════════════════════════════════ */
+
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ── Main Wrapper ── */
+.main-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.main-wrapper.expanded {
+  margin-left: var(--sidebar-width);
+}
+
+.main-wrapper.collapsed {
+  margin-left: var(--sidebar-width-collapsed);
+}
+
+/* ── Main Content ── */
+.main-content {
+  flex: 1;
+  padding: 28px 32px;
+  max-width: 1400px;
+  width: 100%;
+}
+
+/* ── Mobile Overlay ── */
+.sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--bg-overlay, rgba(0, 0, 0, 0.5));
+  z-index: 40;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .main-wrapper.expanded,
+  .main-wrapper.collapsed {
+    margin-left: 0;
+  }
+
+  .main-content {
+    padding: 20px 16px;
+  }
+}

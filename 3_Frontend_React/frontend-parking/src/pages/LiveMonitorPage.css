@@ -1,0 +1,270 @@
+/* ============================================================
+   LIVE MONITOR PAGE — Premium Design
+   ============================================================ */
+
+.live-page {
+  animation: fadeIn 0.4s ease;
+}
+
+/* ── Header Bar ───────────────────────────────────────────── */
+.live-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: 18px 24px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-card);
+  transition: background-color var(--transition-normal),
+              border-color var(--transition-normal);
+}
+
+.live-header-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.live-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  transition: color var(--transition-normal);
+}
+
+.live-controls {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* ── IA Status Badge ─────────────────────────────────────── */
+.ia-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  background: var(--color-success-bg);
+  border: 1px solid var(--color-success-border);
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-success);
+}
+
+.ia-status-icon {
+  font-size: 14px;
+}
+
+/* ── Live Indicator Badge ─────────────────────────────────── */
+.live-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 14px;
+  background: var(--color-danger-bg);
+  border: 1px solid var(--color-danger-border);
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-danger);
+  transition: background-color var(--transition-normal),
+              border-color var(--transition-normal),
+              color var(--transition-normal);
+}
+
+.live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-danger);
+  animation: livePulse 2s ease infinite;
+  transition: background-color var(--transition-normal);
+}
+
+.last-update {
+  font-size: 12px;
+  color: var(--text-muted);
+  transition: color var(--transition-normal);
+}
+
+/* ── Refresh Select ───────────────────────────────────────── */
+.refresh-select {
+  padding: 6px 12px;
+  background: var(--bg-input);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-size: 12px;
+  font-family: inherit;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s,
+              background-color var(--transition-normal),
+              color var(--transition-normal);
+}
+
+.refresh-select:focus {
+  border-color: var(--accent-primary);
+}
+
+/* ── Occupation Progress Bar ──────────────────────────────── */
+.occupation-bar-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: 20px 24px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-card);
+}
+
+.occupation-bar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.occupation-bar-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.occupation-bar-value {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.occupation-bar-track {
+  width: 100%;
+  height: 10px;
+  background: var(--border-subtle);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.occupation-bar-fill {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+              background 0.5s ease;
+  position: relative;
+}
+
+.occupation-bar-fill.success {
+  background: linear-gradient(90deg, #10b981, #34d399);
+  box-shadow: 0 0 12px rgba(var(--color-success-rgb), 0.3);
+}
+
+.occupation-bar-fill.warning {
+  background: linear-gradient(90deg, #f59e0b, #fbbf24);
+  box-shadow: 0 0 12px rgba(251, 191, 36, 0.3);
+}
+
+.occupation-bar-fill.danger {
+  background: linear-gradient(90deg, #ef4444, #f87171);
+  box-shadow: 0 0 12px rgba(var(--color-danger-rgb), 0.3);
+}
+
+.occupation-bar-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+/* ── Mini Stats Row ───────────────────────────────────────── */
+.mini-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.mini-stat {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: 16px 20px;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+}
+
+.mini-stat:hover {
+  border-color: var(--border-color);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.mini-stat-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  transition: background-color var(--transition-normal),
+              color var(--transition-normal);
+}
+
+.mini-stat-icon.blue {
+  background: rgba(96, 165, 250, 0.1);
+  color: #60a5fa;
+}
+
+.mini-stat-icon.green {
+  background: rgba(52, 211, 153, 0.1);
+  color: #34d399;
+}
+
+.mini-stat-icon.red {
+  background: rgba(248, 113, 113, 0.1);
+  color: #f87171;
+}
+
+.mini-stat-value {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.5px;
+  transition: color var(--transition-normal);
+}
+
+.mini-stat-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  transition: color var(--transition-normal);
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .mini-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .live-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .live-header-left {
+    flex-wrap: wrap;
+  }
+}

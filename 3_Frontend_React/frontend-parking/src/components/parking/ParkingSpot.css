@@ -1,0 +1,159 @@
+/* ============================================================
+   PARKING SPOT CARD — Premium Design
+   ============================================================ */
+
+.parking-spot {
+  position: relative;
+  min-height: 140px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  padding: 18px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: default;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  overflow: hidden;
+  animation: fadeIn 0.4s ease backwards;
+}
+
+.parking-spot:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* ── Top Indicator Bar ───────────────────────────────────── */
+.parking-spot::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 12px;
+  right: 12px;
+  height: 3px;
+  border-radius: 0 0 4px 4px;
+  transition: all 0.3s;
+}
+
+.parking-spot.available::before {
+  background: linear-gradient(90deg, transparent, var(--color-success), transparent);
+  box-shadow: 0 2px 12px rgba(var(--color-success-rgb), 0.4);
+}
+
+.parking-spot.occupied::before {
+  background: linear-gradient(90deg, transparent, var(--color-danger), transparent);
+  box-shadow: 0 2px 12px rgba(var(--color-danger-rgb), 0.4);
+}
+
+/* ── Available State ──────────────────────────────────────── */
+.parking-spot.available {
+  border-color: var(--color-success-border);
+}
+
+.parking-spot.available:hover {
+  border-color: var(--color-success);
+  box-shadow: var(--shadow-glow-success), var(--shadow-card-hover);
+}
+
+/* ── Occupied State ───────────────────────────────────────── */
+.parking-spot.occupied {
+  border-color: var(--color-danger-border);
+  background: linear-gradient(to bottom, rgba(var(--color-danger-rgb), 0.04), var(--glass-bg));
+}
+
+.parking-spot.occupied:hover {
+  border-color: var(--color-danger);
+  box-shadow: var(--shadow-glow-danger), var(--shadow-card-hover);
+}
+
+/* ── Spot Number ──────────────────────────────────────────── */
+.spot-number {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.3px;
+  transition: color var(--transition-normal);
+}
+
+/* ── Status Line ──────────────────────────────────────────── */
+.spot-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  transition: color var(--transition-normal);
+}
+
+.spot-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  transition: all var(--transition-normal);
+}
+
+.available .spot-status {
+  color: var(--color-success);
+}
+
+.available .spot-status-dot {
+  background: var(--color-success);
+  animation: successPulse 2s ease infinite;
+}
+
+.occupied .spot-status {
+  color: var(--color-danger);
+}
+
+.occupied .spot-status-dot {
+  background: var(--color-danger);
+  animation: livePulse 2s ease infinite;
+}
+
+/* ── Car SVG ─────────────────────────────────────────────── */
+.spot-car {
+  margin-top: 2px;
+  color: var(--color-danger);
+  opacity: 0.5;
+  transition: all 0.3s;
+}
+
+.parking-spot.occupied:hover .spot-car {
+  opacity: 0.8;
+  transform: scale(1.1);
+}
+
+.car-svg {
+  display: block;
+}
+
+/* ── Available Check Icon ────────────────────────────────── */
+.spot-available-icon {
+  margin-top: 2px;
+  color: var(--color-success);
+  opacity: 0.4;
+  transition: all 0.3s;
+}
+
+.parking-spot.available:hover .spot-available-icon {
+  opacity: 0.8;
+  transform: scale(1.15);
+}
+
+/* ── Time Text ────────────────────────────────────────────── */
+.spot-time {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: var(--text-muted);
+  transition: color var(--transition-normal);
+}
+
+.spot-time-icon {
+  font-size: 12px;
+}
