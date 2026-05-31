@@ -1,50 +1,41 @@
-# ===============
-# PYTHON & IA
-# ===============
+# ═══════════════════════════════════════════
+# Python (IA)
+# ═══════════════════════════════════════════
+1_IA_Python/venv/
+1_IA_Python/__pycache__/
+1_IA_Python/scripts/__pycache__/
+1_IA_Python/runs/
+1_IA_Python/modeles/
+*.pyc
 __pycache__/
-*.py[cod]
-*$py.class
-venv/
-env/
-.env
-.venv/
 
-# Modèles IA et Datasets
-*.pt
-*.h5
-*.weights
-dataset_parking/
-runs/
-labels.cache
+# Vidéos (trop volumineuses pour GitHub)
+1_IA_Python/medias/*.mp4
+1_IA_Python/medias/*.avi
+1_IA_Python/medias/*.mov
+1_IA_Python/medias/dataset_parking/
 
-# Vidéos et médias lourds
-*.mp4
-*.avi
-*.mkv
-*.mov
+# ═══════════════════════════════════════════
+# Java / Spring Boot
+# ═══════════════════════════════════════════
+2_Backend_Java/api/target/
+2_Backend_Java/api/.idea/
+2_Backend_Java/api/*.iml
+2_Backend_Java/api/data/
 
-# ===============
-# REACT FRONTEND
-# ===============
-node_modules/
-dist/
-build/
-.npm/
+# ═══════════════════════════════════════════
+# React / Node.js
+# ═══════════════════════════════════════════
+3_Frontend_React/frontend-parking/node_modules/
+3_Frontend_React/frontend-parking/dist/
+3_Frontend_React/frontend-parking/.env
 
-# ===============
-# JAVA BACKEND
-# ===============
-target/
-*.jar
-*.war
-.gradle/
-/build/
-
-# ===============
-# IDEs et OS
-# ===============
-.idea/
-.vscode/
-*.iml
+# ═══════════════════════════════════════════
+# OS & IDE
+# ═══════════════════════════════════════════
 .DS_Store
 Thumbs.db
+*.log
+.vscode/
+*.swp
+*.swo
